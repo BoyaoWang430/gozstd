@@ -23,7 +23,7 @@ ifeq ($(GOOS_GOARCH),linux_arm64)
 	mv zstd/lib/libzstd.a libzstd_linux_arm64.a
 endif
 ifeq ($(GOOS_GOARCH),linux_riscv64)
-	cd zstd/lib && CC=riscv64-unknown-linux-gnu-gcc ZSTD_LEGACY_SUPPORT=0 MOREFLAGS=$(MOREFLAGS) $(MAKE) clean libzstd.a
+	cd zstd/lib && CC=riscv64-unknown-linux-gnu-clang ZSTD_LEGACY_SUPPORT=0 MOREFLAGS=$(MOREFLAGS) $(MAKE) clean libzstd.a
 	mv zstd/lib/libzstd.a libzstd_linux_riscv64.a
 endif
 endif
